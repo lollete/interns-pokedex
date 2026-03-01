@@ -1,7 +1,4 @@
 import * as pokemonService from '../services/pokemonService.js';
-// ============================================
-// VIEW CONTROLLERS (Return HTML via EJS)
-// ============================================
 
 /**
  * Home page - List all Pokemon with pagination
@@ -117,9 +114,6 @@ export const getPokemonByType = async (req, res) => {
 // API CONTROLLERS (Return JSON)
 // ============================================
 
-/**
- * API: Get all Pokemon
- */
 export const apiGetAllPokemon = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -131,9 +125,7 @@ export const apiGetAllPokemon = async (req, res) => {
   }
 };
 
-/**
- * API: Get Pokemon by name or ID
- */
+
 export const apiGetPokemonDetails = async (req, res) => {
   try {
     const { nameOrId } = req.params;
@@ -152,9 +144,6 @@ export const apiGetPokemonDetails = async (req, res) => {
   }
 };
 
-/**
- * API: Search Pokemon
- */
 export const apiSearchPokemon = async (req, res) => {
   try {
     const { q } = req.query;
@@ -165,9 +154,7 @@ export const apiSearchPokemon = async (req, res) => {
   }
 };
 
-/**
- * API: Get all types
- */
+
 export const apiGetTypes = async (req, res) => {
   try {
     const types = await pokemonService.getPokemonTypes();
@@ -177,9 +164,6 @@ export const apiGetTypes = async (req, res) => {
   }
 };
 
-/**
- * API: Get Pokemon by type
- */
 export const apiGetPokemonByType = async (req, res) => {
   try {
     const { type } = req.params;
