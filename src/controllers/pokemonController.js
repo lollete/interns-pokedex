@@ -125,7 +125,6 @@ export const apiGetAllPokemon = async (req, res) => {
   }
 };
 
-
 export const apiGetPokemonDetails = async (req, res) => {
   try {
     const { nameOrId } = req.params;
@@ -153,7 +152,6 @@ export const apiSearchPokemon = async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
-
 
 export const apiGetTypes = async (req, res) => {
   try {
